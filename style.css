@@ -1,0 +1,825 @@
+body, html {
+    font:13px/18px Tahoma,sans-serif,Arial,Helvetica;
+    background: #e7ebf0;
+    margin: 0;
+    height:100%;
+}
+
+*,:after,:before{
+    box-sizing:border-box
+}
+
+.page-wrap {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.head-wrap {
+    flex: 0 0 48px;
+    user-select: none;
+}
+
+.head-split {
+    max-width: 1010px;
+    margin: 0 auto;
+    height: 48px;
+    background: #5682a3;
+}
+
+.head-logo-wrap {
+    float: left;
+    width: 31%;
+    height: 48px;
+}
+
+.head-logo-wrap:hover,
+.head-peer:hover,
+.head-peer-search-btn:hover,
+.head-peer-title-wrap:hover .head-btn {
+    background: #497799;
+    cursor: pointer;
+}
+
+.head-btn {
+    padding: 17px 20px 15px 22px;
+    display: block;
+}
+
+.icon-hamburger-wrap {
+    margin: 0 36px 0 0;
+    display: inline-block;
+    width: 18px;
+    height: 14px;
+}
+
+.icon-hamburger-wrap .icon-bar {
+    background: #fff;
+    display: block;
+    height: 2px;
+    margin: 0;
+}
+
+.icon-hamburger-wrap .icon-bar:nth-child(2) {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.icon-title {
+    width: 62px;
+    height: 14px;
+    display: inline-block;
+    vertical-align: top;
+    background-image: url(https://web.telegram.org/img/Telegram.svg); 
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    margin-top: 1px;
+}
+
+.head-main-wrap {
+    width: 69%;
+    height: 48px;
+    white-space: nowrap;
+    float: left;
+}
+
+.head-main-wrap .head-btn {
+    display: block;
+    font-weight: bold;
+    padding: 16px 19px;
+    color: #b9cfe3;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.head-peer {
+    float: right;
+}
+
+.head-peer .icon-bar {
+    display: block;
+    background-color: #d7e5f0;
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.head-peer .icon-bar:nth-child(2) {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.head-main-wrap .head-peer-search-btn {
+    float: right;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.icon-search {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    background-image: url(https://web.telegram.org/img/icons/IconsetW.png);
+    background-repeat: no-repeat;
+    background-position: -12px -1037px;
+    vertical-align: middle;
+    opacity: 0.9;
+}
+
+.head-peer-title-wrap {
+    overflow: hidden;
+}
+
+.head-peer-title-wrap .head-btn {
+    padding: 15px 19px 15px;
+    line-height: 18px;
+}
+.head-peer-title {
+    display: inline-block;
+    color: #fff;
+    margin-right: 3px;
+    text-overflow: ellipsis;
+    max-width: 180px;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.head-peer-status {
+    font-weight: normal;
+}
+
+.im-page-wrap {
+    flex: 1 1 auto;
+    height: 100%;
+}
+
+@media (max-height: 600px), (max-width: 1010px) {
+    .im-page-wrap {
+        border-bottom: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .footer-wrap {
+        display: none;
+    }
+}
+
+.im-page-split {
+    background: #fff;
+    max-width: 1010px;
+    min-width: 300px;
+    flex: 1 1 auto;
+    height: 100%;
+    margin: 0 auto;
+    box-shadow: 0px 1px 0 #dfe5ec;
+    border-radius: 0 0 3px 3px;
+    border-left: 1px solid #dfe5ec;
+    border-right: 1px solid #dfe5ec;
+    border-bottom: 1px solid #d2dbe3;
+    overflow: hidden;
+}
+
+.im-dialogs-col-wrap {
+    float: left;
+    width: 31%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    border-right: 2px solid #E9EBED;
+    padding-bottom: 10px;
+    user-select: none;
+}
+
+.im-dialogs-search {
+
+    padding: 12px;
+}
+
+.im-dialogs-serach-field {
+    display:block;
+    width:100%;
+    height:34px;
+    font-size: 12px;
+    line-height: normal;
+    border: 1px solid #F2F2F2;
+    border-radius: 2px;
+    padding: 6px 26px 6px 30px;
+    margin: 0;
+    background-color: #F2F2F2;
+    background-image: url(https://web.telegram.org/img/icons/IconsetW.png);
+    background-repeat: no-repeat;
+    background-position: -6px -205px;
+}
+
+.im-dialogs-serach-field::placeholder {
+    color: #a6a6a6;
+}
+
+.im-dialogs-serach-field:focus {
+    background-color: #fff;
+    border: 1px solid #F2F2F2;
+    outline: #F2F2F2;
+}
+
+.im-dialogs-col {
+    height: 100%;
+    margin-right: -2px;
+}
+
+.im-dialogs-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.im-dialogs-scrollable-wrap {
+    position: absolute;
+    overflow: hidden;
+    padding-right: 2px; 
+    top: 0;
+    right: 0px;
+    bottom: 0;
+    left: 0;
+}
+
+.im-dialogs-scrollable-wrap:hover {
+    padding-right: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+.im-dialogs-wrap ::-webkit-scrollbar {
+    width: 2px;
+    background: rgba(216, 223, 225, 0.45);
+}
+
+.im-dialogs-wrap ::-webkit-scrollbar-thumb {
+    background-color:rgb(58, 109, 153, 0.4);
+    
+}
+
+.nav {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    cursor: pointer;
+}
+
+.active {
+    background: #6490b1;   
+}
+
+.im-dialog {
+    padding: 7px 16px;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    float:none;
+}
+
+a.im-dialog:hover {
+    border-radius:0;
+    background:#f2f6fa;    
+}
+
+a.im-dialog:hover .im-short-message-text {
+    color:#698192;
+}
+
+a.im-dialog:hover .im-dialog-date {
+    color:#91a6ba;
+}
+
+.active a.im-dialog {
+    background-color:#6490b1;
+}
+
+.active .im-dialog-date,
+.active .im-dialog-message,
+.active .im-dialog:hover .im-dialog-date,
+.active .im-dialog:hover .im-short-message-text{
+    color:#ffffff;
+}
+
+.im-dialog-meta {
+    float: right !important;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.im-dialog-date {
+    color: #b3b3b3;
+    font-size: .85em;
+}
+
+.badge {
+    display: inline-block;
+    min-width: 21px;
+    padding: 3px 7px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    vertical-align: baseline;
+    white-space: nowrap;
+    text-align: center;
+    background-color: #999;
+    border-radius: 10px;
+}
+
+.im-dialog-badge{
+    background:#64c270;
+    font-size:11px;
+    padding:5px;
+    border-radius:11px;
+    min-width:21px;
+    text-align:center;
+    margin-top:4px
+}
+
+.im-dialog-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+div.im-dialog-photo {
+    margin-right: 15px;
+    float: left !important;
+}
+
+.peer-initials {
+    display:block;
+    color:#fff;
+    text-align:center;
+    text-transform:uppercase;
+    user-select:none;
+    line-height: 48px;
+    font-size: 18px;
+}
+
+
+.user-bgcolor-1 {
+    background-color: #64c270;
+}
+
+.user-bgcolor-2 {
+    background-color: #8bc93a;
+}
+
+.user-bgcolor-3 {
+    background-color: #c94bb8;
+}
+
+.user-bgcolor-4 {
+    background-color: #567fca;
+}
+
+.user-bgcolor-5 {
+    background: #ecd074;
+}
+
+.im-dialog-message-wrap {
+    height:44px;overflow:hidden;
+}
+
+.im-dialog-peer {
+    color:#222;
+    font-weight:700;
+    margin-top:3px;
+    margin-bottom:3px;
+}
+
+.active .im-dialog-peer {
+    color:#fff;
+}
+
+.im-dialog-message,.im-dialog-peer {
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+
+.im-dialog-message {
+    margin-top: 5px;
+    color: grey;
+}
+
+.im-history-col-wrap {
+    float: right;
+    width: 69%;
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+.im-history-col {
+    height: 100%;
+}
+
+
+.im-history-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    user-select: none;
+}
+
+.im-history-scrollable-wrap {
+    position: absolute;
+    overflow: hidden;
+    padding-right: 9px;
+    top: 0;
+    right: 9px;
+    bottom: 0;
+    left: 16px;
+    outline: 0 !important;
+    user-select: none;
+}
+
+.im-history-scrollable-wrap:hover {
+    padding-right: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.im-history-wrap ::-webkit-scrollbar {
+    width: 9px;
+    background: rgba(216, 223, 225, 0.45);
+}
+
+.im-history-wrap ::-webkit-scrollbar-thumb {
+    background-color: rgba(137, 160, 179, 0.5);
+    border-radius: 2px;
+}
+
+.im-history {
+    padding: 0;
+    position: relative;
+}
+
+.im-history-message {
+    margin-top: 0px;
+}
+
+.im-message-date-split {
+    text-align: center;
+}
+
+.im-service-message {
+    display: block;
+    min-width: 10px;
+    padding: 4px 7px;
+    line-height: 1.4;
+    color: #999;
+    text-align: center;
+    border-radius: 10px;
+    margin: 5px 0;
+}
+
+.im-message-outer-wrap {
+    cursor: pointer;
+}
+
+.im-message-wrap {
+    max-width: 560px;
+    padding: 0 15px 0 15px;
+    margin: 0 auto;
+    position: static;
+    overflow: hidden;
+}
+
+.im-content-message-wrap {
+    margin: 8px 10px 8px 16px;
+    overflow: hidden;
+}
+.im-message-from-photo {
+    margin: 0 15px 0 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.im-message-from-photo .peer-initials {
+    line-height: 42px;
+    font-size: 13px;
+}
+
+.im-message-date {
+    color: #adadad;
+    font-size: .85em;
+    padding: 0 0 20px 10px;
+}
+
+.im-message-date:hover {
+    text-decoration: underline;
+}
+
+.im-message-body {
+    overflow: hidden;
+}
+
+.im-message-author {
+    font-size: 12px;
+    margin: 1px 0 4px;
+    display: inline-block;
+    color: #3a6d99;
+    font-weight: 700;
+    user-select: text;
+}
+
+.im-message-author:hover {
+    text-decoration: underline;
+}
+
+.im-message-text {
+    line-height: 150%;
+    user-select: text;
+}
+.im-message-text a {
+    color: #3a6d99;
+    text-decoration: none;
+}
+.im-message-text a:hover {
+    text-decoration: underline;
+}
+
+.im-send-panel-wrap {
+    width: 100%;
+    max-width: 554px;
+    margin: 0 auto;
+    padding: 10px 15px 21px;
+}
+
+.im-send-form-wrap {
+    height: 97px;
+    position: relative;
+}
+
+.im-panel-peer-photo,
+.im-panel-own-photo {
+  width: 52px;
+  height: 52px;
+  line-height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+a.im-panel-peer-photo {
+    cursor: pointer;
+    margin-left: 20px;
+    height: 55px;
+}
+
+a.im-panel-peer-photo .peer-initials {
+    line-height: 50px;
+}
+
+a.im-panel-own-photo {
+    cursor: pointer;
+    display: block;
+    margin-right: 18px;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.im-send-form {
+    max-width: 382px;
+    left: 70px;
+    right: 72px;
+    margin: 0 auto;
+    position: absolute;
+}
+
+.im-send-field-wrap {
+    margin-bottom: 13px;
+    padding-bottom: 2px;
+    overflow-x: hidden;
+}
+
+.composer-emoji-insert-btn {
+    position: absolute;
+    right: 3px;
+    top: 2px;
+    cursor: pointer;
+    padding: 0;
+    width: 22px;
+    height: 22px;
+    margin-top: 1px;
+    display: block;
+    opacity: 1;
+}
+
+.icon-emoji {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    vertical-align: top;
+    opacity: .8;
+    background-image: url(https://web.telegram.org/img/icons/General.png);
+    background-repeat: no-repeat;
+    background-position: -9px -335px;
+}
+
+.composer-rich-textarea {
+    font-size: 12px;
+    left: -17px;
+    width: calc(100% + 34px);
+    overflow-y: scroll;
+    border-radius: 0;
+    border: 0;
+    outline: none;
+    box-shadow: 0 1px 0 0 #e8e8e8;
+    padding: 1px 45px 1px 19px;
+    position: relative;
+    margin: 0;
+    min-height: 52px;
+    line-height: 20px;
+    height: auto;
+    box-sizing: border-box;
+}
+
+.composer-rich-textarea:empty::before {
+    content: attr(placeholder);
+    color: #9aa2ab;
+    display: block;
+    margin-top: -1px;
+    margin-left: 1px;
+    pointer-events: none;
+}
+
+.composer-rich-textarea:focus {
+    border: 0;
+    box-shadow: none;
+    outline: none;
+    box-shadow: 0 2px 0 0 #77b7e4;
+}
+
+.im-send-button-wrap {
+    user-select: none;
+}
+
+.im-submit {
+    cursor: pointer;
+    color: #499dd9;
+    font-size: 13px;
+    line-height: 18px;
+    height: 18px;
+    border-radius: 0;
+    float: right;
+    min-width: 0;
+    margin-top: 5px;
+    margin-left: 10px;
+    width: auto;
+    padding: 0;
+    font-weight: bold;
+    background: 0 0;
+    text-transform: uppercase;
+    border: 0px;
+    outline: none;
+}
+
+.im-submit:hover {
+    color: #3589c5;
+    background: inherit;
+}
+
+.im-submit-send-label::before {
+    content: attr(data-content);
+}
+
+button {
+    font-family: inherit;
+}
+
+.im-attach {
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    width: 18px;
+    height: 17px;
+    margin-right: 28px;
+    margin-top: 6px;
+}
+
+.icon-paperclip {
+    display: inline-block;
+    width: 18px;
+    height: 17px;
+    vertical-align: top;
+    opacity: 0.8;
+    margin: 0;
+    background-image: url(https://web.telegram.org/img/icons/General.png);
+    background-repeat: no-repeat;
+    background-position: -11px -455px;
+}
+
+.im-media-attach {
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    width: 20px;
+    height: 18px;
+    margin-top: 5px;
+    margin-right: 25px;
+}
+
+.icon-camera {
+    display: inline-block;
+    width: 20px;
+    height: 18px;
+    vertical-align: top;
+    opacity: 0.8;
+    background-image: url(https://web.telegram.org/img/icons/General.png);
+    background-repeat: no-repeat;
+    background-position: -10px -399px;
+}
+
+.im-record {
+    cursor: pointer; 
+    display: block;
+    width: 18px;
+    height: 23px;
+    margin-right: 15px;
+    position: relative;
+}
+
+.im-record-bg {
+    position: absolute;
+    margin: -10px 0 0 -16px;
+    padding: 13px 16px 13px 16px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    overflow: hidden;
+    background: #fff;
+    transition: background-color linear 1s;
+}
+
+.icon-mic {
+    display: inline-block;
+    width: 18px;
+    height: 22px;
+    vertical-align: text-top;
+    opacity: 0.8;
+    background-image: url(https://web.telegram.org/img/icons/IconsetW.png);
+    background-repeat: no-repeat;
+    background-position: -12px -285px;
+    background-color: transparent;
+}
+
+.im-attach:hover .icon-paperclip,
+.im-media-attach:hover .icon-camera,
+.im-record-bg:hover .icon-mic {
+    opacity: 1;
+}
+
+.composer-emoji-panel {
+    display: block;
+    height: 30px;
+    overflow: hidden;
+    max-width: 210px;
+}
+
+.composer-emoji-btn {
+    display: inline-block;
+    padding: 5px;
+    outline: 0;
+    border-radius: 2px;
+    margin: -1px 0 2px -1px;
+}
+
+.composer-emoji-btn:hover {
+    background-color:#edf2f5;
+}
+
+.emoji {
+    background-size: 540px 140px;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    display: inline-block;
+    background-image: url(https://web.telegram.org/img/emojisprite_0.png);
+}
+
+.footer-wrap {
+   flex: 0 0 23px;
+}
